@@ -4,26 +4,25 @@ use PHPUnit\Framework\TestCase;
 
 class MathTest extends TestCase
 {
-    public function divisorsProvider()
+    public function summationOfPrimeProvider()
     {
         return [
-            [9, [1,3,9]],
-            [10, [1,2, 5, 10]],
-            [1, [1]],
-            [0, []],
-            [-1, []]
+            [9, 2 + 3 + 5 + 7],
+            [10, 2 + 3 + 5 + 7],
+            [15, 2 + 3 + 5 + 7 + 11 + 13],
+            [0, 0],
+            [1, 0],
         ];
     }
 
     /**
-     * 9 => [1,3,9]
      * @test
-     * @dataProvider divisorsProvider
+     * @dataProvider summationOfPrimeProvider
      *
      */
-    public function divisors($number, $expectedDivisors)
+    public function summationOfPrime($number, $expectedDivisors)
     {
-        $divisors = Math::divisors($number);
+        $divisors = Math::summationOfPrime($number);
         self::assertSame($expectedDivisors, $divisors);
     }
 }

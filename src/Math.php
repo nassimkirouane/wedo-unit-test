@@ -1,20 +1,37 @@
 <?php
+
 namespace Wedo;
 class Math
 {
-
-    public static function divisors($number)
+    /**
+     * @param int $number
+     * @return int
+     */
+    public static function summationOfPrime(int $number): int
     {
-        if (0 >= $number) {
-            return [];
+        $sum = 0;
+        for ($i = 1; $i < $number; $i++) {
+            if (self::isPrime($i)) {
+                $sum += $i;
+            }
         }
+
+        return $sum;
+    }
+
+    /**
+     * @param int $number
+     * @return bool
+     */
+    private static function isPrime(int $number): bool
+    {
         $divisors = [];
-        for ($i = 1; $i <$number; $i++) {
+        for ($i = 1; $i <= $number; $i++) {
             if ($number % $i === 0) {
                 $divisors[] = $i;
             }
         }
-        $divisors[] = $number;
-        return $divisors;
+
+        return 2 === count($divisors);
     }
 }

@@ -3,4 +3,4 @@ $ php index.php
 ```
 
 
-##### Implement the method `\Wedo\Math::factorial` by using unit tests 
+##### Implement the method `\Wedo\Math::summationOfPrime` by using unit tests 
