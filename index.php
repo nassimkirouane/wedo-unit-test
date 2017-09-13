@@ -1,8 +1,10 @@
 <?php
 require_once 'vendor/autoload.php';
 
-echo 'Compute the summation of primes of : ';
-$number = trim(fgets(STDIN));
+$formula = $argv[1];
+$start = $argv[2];
+$end = $argv[3];
 
-var_export(\Wedo\Math::summationOfPrime($number));
-echo "\n";
+$points = \Wedo\Math::curve($formula, $start, $end);
+$renderer = new \Wedo\Renderer();
+echo $renderer->render($points);

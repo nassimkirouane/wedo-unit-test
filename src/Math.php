@@ -3,35 +3,17 @@
 namespace Wedo;
 class Math
 {
-    /**
-     * @param int $number
-     * @return int
-     */
-    public static function summationOfPrime(int $number): int
+
+    public static function curve($formula, $start, $end)
     {
-        $sum = 0;
-        for ($i = 1; $i < $number; $i++) {
-            if (self::isPrime($i)) {
-                $sum += $i;
-            }
+        $points = [];
+        $y = 0;
+        for ($x = $start; $x <= $end; $x ++) {
+            $equation = '$y = ' . $formula . ';';
+            eval($equation);
+            $points[$x] = $y;
         }
 
-        return $sum;
-    }
-
-    /**
-     * @param int $number
-     * @return bool
-     */
-    private static function isPrime(int $number): bool
-    {
-        $divisors = [];
-        for ($i = 1; $i <= $number; $i++) {
-            if ($number % $i === 0) {
-                $divisors[] = $i;
-            }
-        }
-
-        return 2 === count($divisors);
+        return $points;
     }
 }
