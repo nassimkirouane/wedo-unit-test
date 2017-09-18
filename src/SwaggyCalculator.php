@@ -38,14 +38,9 @@ namespace Wedo;
           }
         }
 
-        public function DisplayResult()
-        {
-            echo "The result is : $this->result\n";
-        }
-
         public function GetResult()
         {
-          echo $this->result;
+            echo "The result is : $this->result\n";
         }
 
         function Calculate()
