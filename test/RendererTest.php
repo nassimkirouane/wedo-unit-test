@@ -9,14 +9,14 @@ class RendererTest extends TestCase
         return [
             [
                 [0, 1],
-                ".\n" .
-                " .\n"
+                "•\n" .
+                " •\n"
             ],
             [
                 [0, 1, 3],
-                ".\n" .
-                " .\n" .
-                "   .\n"
+                "•\n" .
+                " •\n" .
+                "   •\n"
             ]
         ];
     }
